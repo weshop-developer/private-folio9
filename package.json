@@ -1,0 +1,42 @@
+{
+  "name": "private-folio9",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "vite",
+    "dev:backend": "wrangler dev --port 3000",
+    "build": "vite build",
+    "deploy": "vite build && wrangler deploy",
+    "preview": "vite preview",
+    "wrangler": "wrangler",
+    "migrate:local": "wrangler d1 execute DB --local --file=schema.sql"
+  },
+  "dependencies": {
+    "@types/bcryptjs": "^3.0.0",
+    "bcryptjs": "^3.0.3",
+    "hono": "^4.6.14",
+    "jose": "^6.1.3",
+    "lucide-react": "^0.560.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.10.1",
+    "recharts": "^3.5.1",
+    "yahoo-finance2": "^3.10.2"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241205.0",
+    "@hono/vite-dev-server": "^0.17.0",
+    "@types/react": "^18.3.13",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.2.1",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.16",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.3",
+    "wrangler": "^4.54.0"
+  }
+}
